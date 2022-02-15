@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./assets/icon.svg" type="image/icon type">
+    <title>England Pelenio</title>
+    <script src="./index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_CbEki0sFxrvuVOpe9NBvk");
+        })();
+    </script>
+</head>
+
+<body>
+    <section id="landing_page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img src="./assets/././logo.svg" id="personal-logo" alt="logo">
+            </figure>
+            <ul class="nav_link--list">
+                <li class="nav_link" onclick="toggleModal()"><a href="#"
+                        class="nav_link--anchor link_hover-effect link_hover-effect-black ">About</a></li>
+                <li class="nav_link"><a href="#Projects"
+                        class="nav_link--anchor link_hover-effect link_hover-effect-black ">Projects</a></li>
+                <li class="nav_link" onclick="toggleModal()"><a href="#"
+                        class="nav_link--anchor link_hover-effect link_hover-effect-black ">Contact</a></li>
+                <li class="nav_link" onclick="toggleContrast()"><a href="#"
+                        class="nav_link--anchor link_hover-effect link_hover-effect--black"><i
+                            class="fas fa-moon click"></i></a></li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">
+                    Hey I'm
+                </h1>
+                <h1 class="title_secondary cyan__text">
+                    England
+                </h1>
+                <p class="header__para">I am <b class="cyan__text">Frontend Web Developer</b> with a
+                    passion for building
+                    responsive and intriguing web application with
+                    great user experiences that positively impact the people around me.
+                    <br>
+                    Here's a bit more <b class="cyan__text click" onclick="toggleModal()">about me</b>
+                </p>
+                <div class="social__list">
+                    <a href="#" class="social__link click"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social__link click"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social__link click" target="_blank"><i class="fas fa-file-pdf"></i></a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+            <button class="mail_btn click" onclick="toggleModal()">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+        <a href="#Projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div id="modal">
+            <div class="modal_half modal_about">
+                <h3 class="modal_title modal_title-about">Here's a bit more about me.</h3>
+                <h4 class="modal_subtitle .modal_subtitle-about">Frontend Web Developer</h4>
+                <p class="modal_para-about">I'm a 19 year-old <b class="cyan__text">Frontend Web
+                        Developer</b> living in Canada. I am highly motivated with a
+                    strong passion for <b class="cyan__text">learning</b> and <b class="cyan__text">creating</b>
+                    websites revolving on<b class="cyan__text"> great user experience.</b>
+                    <br>
+                    <br>
+                    I'm currently studying at George Brown College of Applied Arts and Technology improving on
+                    my <b class="cyan_text">frontend</b>
+                    skills.
+                </p>
+                <div class="modal_languages">
+                    <figure class="modal_language">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                            alt="" class="modal_language-img">
+                        <span class="language_name">HTML</span>
+                    </figure>
+                    <figure class="modal_language">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                            class="modal_language-img">
+                        <span class="language_name">CSS</span>
+                    </figure>
+                    <figure class="modal_language">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                            class="modal_language-img">
+                        <span class="language_name">JavaScript</span>
+                    </figure class="modal_language">
+                    <figure class="modal_language">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
+                            class="modal_language-img">
+                        <span class="language_name">React.JS</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal_half modal_contact">
+                <i class="fas fa-times modal_exit click" onclick="toggleModal()"></i>
+                <h3 class="modal_title modal_title-contact">Let's have a chat!</h3>
+                <h4 class="modal_subtitle .modal_subtitle-contact">I'm open to new opportunities</h4>
+                <form onsubmit="contact(event)" id="contact_form">
+                    <div class="form_item">
+                        <label class="form_item--label">Name</label>
+                        <input class="input " type="text" name="user_name" required></input>
+                    </div>
+                    <div class="form_item">
+                        <label class="form_item--label">Email</label>
+                        <input class="input " type="email" name="user_email" required></input>
+                    </div>
+                    <div class="form_item">
+                        <label class="form_item--label">Message</label>
+                        <textarea class="input " type="text" name="message" required></textarea>
+                    </div>
+                    <button id="contact_submit" class="form_submit">Send it my way</button>
+                </form>
+                <div class="modal_overlay modal_overlay-loading"><i class="fas fa-spinner"></i></div>
+                <div class="modal_overlay modal_overlay-success">Thanks for the message! looking forward to speak with
+                    you soon!</div>
+            </div>
+        </div>
+        </div>
+        <img src="./assets/triangle.svg" class="shape shape-0">
+        <img src="./assets/circle.svg" class="shape shape-1">
+        <img src="./assets/squiggly.svg" class="shape shape-2">
+        <img src="./assets/circle.svg" class="shape shape-3">
+        <img src="./assets/squiggly.svg" class="shape shape-4">
+        <img src="./assets/semi circle.svg" class="shape shape-5">
+        <img src="./assets/triangle.svg" class="shape shape-6">
+        <img src="./assets/semi circle.svg" class="shape shape-7">
+        <img src="./assets/circle.svg" class="shape shape-8">
+    </section>
+    <section id="Projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="cyan__text">Projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/treact.png" class="proj__img" alt="">
+                            <div class="proj_desc--wrapper">
+                                <div class="proj__desc">
+                                    <h3 class="proj__desc--title">
+                                        Landing Page
+                                    </h3>
+                                    <h4 class="proj__desc--sub-title">
+                                        HTML, CSS, JavaScript
+                                    </h4>
+                                    <p class="proj__desc--para">
+                                        A responsive, professional landing page template that I created with best
+                                        practices of HTML, CSS and JavaScript.
+                                        While creating the website, I applied important CSS concepts including Flexbox,
+                                        animations and transitions, box model, media queries and BEM CSS
+                                    </p>
+                                    <div class="proj__desc--links">
+                                        <a href="https://github.com/Kujiama/Treact-project" class="proj_desc-link"
+                                            target="_blank"><i class="fab fa-github"></i></a>
+                                        <a href="https://kujiama.github.io/Treact-project/" target="_blank"
+                                            class="proj_desc-link"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/E-portfolio.png" class="proj__img" alt="">
+                            <div class="proj_desc--wrapper">
+                                <div class="proj__desc">
+                                    <h3 class="proj__desc--title">
+                                        Client E-Portfolio
+                                    </h3>
+                                    <h4 class="proj__desc--sub-title">
+                                        HTML, CSS,
+                                    </h4>
+                                    <p class="proj__desc--para">
+                                        A responsive multi-platform E-portfolio built using semantic HTML and applied
+                                        best practices for CSS such as (BEM, animations and transitions, reusable
+                                        classes and much more)
+                                        personal information is redacted and applied no access for contact button to
+                                        maintain privacy
+                                    </p>
+                                    <div class="proj__desc--links">
+                                        <a href="https://github.com/Kujiama/E-Portfolio-project" class="proj_desc-link"
+                                            target="_blank"><i class="fab fa-github"></i></a>
+                                        <a href="https://kujiama.github.io/E-Portfolio-project" target="_blank"
+                                            class="proj_desc-link"><i class="fas fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer_row">
+                <figure class="footer_logo--wrapper">
+                    <img src="./assets/logo.svg" alt="logo" class="footer__logo">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="#" target="_blank"
+                        class="footer_social-link link_hover-effect link_hover-effect-white">GitHub</a>
+                    <a href="#" target="_blank"
+                        class="footer_social-link link_hover-effect link_hover-effect-white">LinkedIn</a>
+                    <a href="#" class="footer_social-link link_hover-effect link_hover-effect-white"
+                        onclick="toggleModal()">Contact</a>
+                    <a href="#" target="_blank"
+                        class="footer_social-link link_hover-effect link_hover-effect-white">Resume</a>
+                </div>
+                <div class="footer_copyright">Copyright &copy; 2022 England Pelenio</div>
+            </div>
+    </footer>
+</body>
+
+</html>
